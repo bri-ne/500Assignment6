@@ -1,0 +1,91 @@
+---
+title: "MUSA500_Assignment6"
+author: "Olivia Scalora, Briana Cervantes"
+date: "12/10/2021"
+output:
+  html_document:
+    toc: true 
+    toc_float: true 
+    toc_depth: 6
+    theme: yeti
+    highlight: textmate
+    code_folding: "hide"
+    css: style.css
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+
+#install.packages("twitteR", dependencies=T)
+#install.packages("ROAuth")
+#install.packages("base64enc")
+#install.packages("httr")
+#install.packages("httpuv")
+#install.packages("curl")
+#install.packages("devtools")
+#install.packages("bit")
+#install.packages("RTextTools")
+#install.packages("topicmodels")
+#nstall_github("geoffjentry/twitteR")
+
+
+
+library(twitteR)
+library(ROAuth)
+library(base64enc)
+library(httr)
+library(httpuv)
+library(curl)
+library(devtools)
+library(bit)
+library(RTextTools)
+library(topicmodels)
+library(RCurl) 
+#library("openssl")
+library(openssl)
+
+
+palette5<-c("#264653", "#2A9D8F", "#E9C46A", "#F4A261", "#E76F51")
+palette4<-c("#264653", "#2A9D8F", "#E9C46A",  "#E76F51")
+palette3<- c("#264653",  "#E9C46A",  "#E76F51")
+palette2<-c("#264653", "#E76F51")
+
+
+```
+
+# INTRO
+
+```{r api.setup, include= FALSE, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
+
+
+
+
+
+
+ConsumerKey <- "14NtpfBXGmOjimtMyZ0IQIh7J"
+ConsumerSecret <- "3XxKWn0P4aD9koSI6IIfYd1v2MGxVhZLMgqPxtiww9HYL2AQAU"
+AccessToken <- "1068243914-Y1dIVBGMzVWKF8DXq87OdntzhqYT5YKIHAtEeHG"
+AccessSecret <- "DLvmRYyYQWBtGFVkbPgDf8yxAITZkXw6Nxc8uAOgyHhdi"
+
+#API keys  : QZDy1IxfGCIH9WIX1jrgguQX4
+#API secret : DGVOixbzWcw96eUndPYZ2UgfBFlhmcI2nmSDWdOOJlTUri2cRN
+#Bearer token:AAAAAAAAAAAAAAAAAAAAAJZdWwEAAAAAK5LQucwl%2F3JwUd6kONmKq6LCtIc%3DWedineLCRq1snAtVxNePRC6B87Voqv40GcjbxhejBbGlM70NEQ
+httr::oauth_endpoints("twitter")
+#    Type 1 and hit Enter if 1 appears on the screen
+twitteR::setup_twitter_oauth(ConsumerKey,ConsumerSecret,AccessToken,AccessSecret)
+
+
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
